@@ -1,0 +1,36 @@
+@use "../sizes";
+@use "../sg";
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: sizes.$pm-sm;
+
+  text-align: center;
+  max-width: 310px;
+
+  padding: sizes.$pm-1;
+
+  box-shadow: sg.$shadow-sm;
+  border-radius: sg.$rounded-1;
+
+  .content--top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: sizes.$pm-base;
+
+    .icon {
+      width: clamp(32px, 100%, 65px);
+    }
+  }
+  .content--bottom {
+    word-break: keep-all;
+    p {
+      color: sg.$color-neutral-grey;
+      font-size: var(--fs-sm);
+    }
+  }
+}

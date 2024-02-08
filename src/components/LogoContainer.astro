@@ -1,0 +1,30 @@
+---
+import { Image } from "astro:assets";
+// || Styles
+import "../styles/scss/components/logocontainer.scss";
+
+export interface Props {
+  logos: ImageMetadata[];
+}
+const { logos = [] } = Astro.props;
+const totalGridsNeeded = logos.length <= 7 ? logos.length : 7;
+---
+
+<div class="logo_container">
+  {
+    logos.map((logo) => {
+      return (
+        <div class="logo">
+          <Image
+            src={logo}
+            width={logo.width}
+            height={logo.height}
+            alt="logo-1"
+          />
+        </div>
+      );
+    })
+  }
+</div>
+
+<style define:vars={{ totalGridsNeeded: totalGridsNeeded }}></style>

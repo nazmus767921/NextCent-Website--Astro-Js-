@@ -1,0 +1,210 @@
+@use "./sizes";
+@use "./sg";
+@use "sass:math";
+
+:root {
+  --fs-xsm: 0.75em;
+  --fs-sm: 0.875em;
+  --fs-base: 1em;
+  --fs-h5: 1.125em;
+  --fs-h4: 1.25em;
+  --fs-h3: 1.75em;
+  --fs-h2: 2.25em;
+  --fs-h1: 4em;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: inherit;
+  -webkit-tap-highlight-color: transparent; /* for removing the highlight */
+}
+
+html {
+  font-size: 1rem; /* browser support fallback */
+  font-size: clamp(1rem, 1rem + 0.001vw, 1rem);
+}
+
+body {
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+
+  font-family: sg.$ff-base;
+  font-size: 1em;
+  color: sg.$color-neutral-grey;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: sg.$ff-base;
+  font-weight: bold;
+  color: sg.$color-neutral-grey-dark;
+}
+h1 {
+  font-size: var(--fs-h1);
+  line-height: sizes.$lh-sm;
+}
+h2 {
+  font-size: var(--fs-h2);
+  line-height: sizes.$lh-sm;
+}
+h3 {
+  font-size: var(--fs-h3);
+  line-height: sizes.$lh-base;
+}
+h4 {
+  font-size: var(--fs-h4);
+  line-height: sizes.$lh-2;
+}
+
+p {
+  font-size: var(--fs-base);
+  line-height: sizes.$lh-2;
+}
+
+.is--sm {
+  font-size: var(--fs-sm);
+}
+.is--xsm {
+  font-size: var(--fs-xsm);
+}
+
+a,
+button {
+  color: inherit;
+  appearance: none;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  width: 999em;
+  height: 100%;
+  max-width: 100%;
+
+  object-position: center;
+}
+
+.imgWrapper {
+  display: flex;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+// || Utility classes
+.container {
+  width: min(100% - sizes.$pm-4, 90em - 18em);
+  margin-inline: auto;
+}
+
+.logo {
+  width: 156px;
+  height: 24px;
+}
+
+.is--background-colored {
+  background-color: sg.$color-neutral-silver;
+}
+
+.is--color-brand {
+  color: sg.$color-primary;
+}
+
+.is--visible-on-mobile {
+  display: unset;
+}
+.is--visible-on-tablet {
+  display: none;
+}
+.is--visible-on-desktop-sm {
+  display: none;
+}
+.is--visible-on-desktop-lg {
+  display: none;
+}
+.is--visible-from-tablet {
+  display: none;
+}
+.is--visible-from-desktop-sm {
+  display: none;
+}
+.is--visible-from-desktop-lg {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  // || Utility classes
+  .container {
+    width: min(100% - sizes.$pm-5, 90em - 18em);
+    margin-inline: auto;
+  }
+
+  .is--visible-on-mobile {
+    display: none;
+  }
+  .is--visible-on-tablet,
+  .is--visible-from-tablet {
+    display: unset;
+  }
+}
+
+@media screen and (min-width: 991px) {
+  .is--visible-on-tablet {
+    display: none;
+  }
+  .is--visible-on-desktop-sm,
+  .is--visible-from-desktop-sm {
+    display: unset;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .is--visible-on-desktop-sm {
+    display: none;
+  }
+  .is--visible-on-desktop-lg,
+  .is--visible-from-desktop-lg {
+    display: unset;
+  }
+}
+
+@media screen and (min-width: 320px) {
+  :root {
+    --fs-h1: 3em;
+    --fs-h2: 1.85em;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  :root {
+    --fs-xsm: 0.75em;
+    --fs-sm: 1.05em;
+    --fs-base: 1.15em;
+    --fs-h1: 3.5em;
+  }
+  html {
+    font-size: 1rem; /* browser support fallback */
+    font-size: clamp(0.9rem, 0.5rem + 0.78125vw, 1rem);
+  }
+}
+
+@media screen and (min-width: 1440px) and (max-width: 1920px) {
+  html {
+    font-size: 1rem; /* browser support fallback */
+    font-size: clamp(1rem, 0.625rem + 0.41667vw, 1.125rem); // 18px on max
+  }
+}

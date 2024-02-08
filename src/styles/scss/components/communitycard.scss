@@ -1,0 +1,55 @@
+@use "../sizes";
+@use "../sg";
+
+$image-height: 286px;
+$rounded: sg.$rounded-1;
+
+.community-card {
+  width: 100%;
+  display: grid;
+  grid-template-areas: "stack";
+  // this line is needed to fix the height of the card that was shrunk down due to card styling.
+  margin-bottom: calc($image-height / 3);
+
+  .image {
+    grid-area: stack;
+
+    border-radius: $rounded;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+
+    width: max(300px, 90%);
+    max-height: min(10em, 100%);
+
+    margin-inline: auto;
+    padding: sizes.$pm-1;
+
+    grid-area: stack;
+    position: relative;
+    bottom: calc(calc(-1 * $image-height) + calc($image-height / 1.9));
+
+    background-color: sg.$color-pure-white;
+    box-shadow: sg.$shadow-lg;
+    border-radius: $rounded;
+
+    .title {
+      margin-bottom: sizes.$pm-sm;
+    }
+    .flexible {
+      flex-grow: 1;
+    }
+  }
+}
+
+@media screen and (min-width: 991px) {
+  .community-card {
+    margin-bottom: calc($image-height);
+
+    .content {
+      bottom: calc(calc(-1 * $image-height) + calc($image-height / 3));
+    }
+  }
+}

@@ -1,0 +1,32 @@
+---
+// import "../styles/scss/normalize.scss";
+// must be after  normalize to override it properly
+import "../styles/scss/global.scss";
+// || Component imports
+import MobileMenu from "../components/MobileMenu.astro";
+import Footer from "../components/sections/Footer.astro";
+import Home from "../components/sections/Home.astro";
+import HomeBody from "../components/sections/HomeBody.astro";
+import BaseLayout from "../layout/BaseLayout.astro";
+
+// || Page config
+const title = "NextCent | Developed by Nazmus.dev.0";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <BaseLayout>
+      <MobileMenu />
+      <Home />
+      <HomeBody />
+      <Footer />
+    </BaseLayout>
+  </body>
+</html>

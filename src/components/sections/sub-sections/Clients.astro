@@ -1,0 +1,27 @@
+---
+import "../../../styles/scss/components/sections/sub-sections/clients.scss";
+// ||logos import
+import {
+  logo,
+  logo1,
+  logo2,
+  logo3,
+  logo4,
+  logo5,
+  logo6,
+} from "../../../assets/logo/logos";
+// || Components
+import LogoContainer from "../../LogoContainer.astro";
+import Title from "../../Title.astro";
+
+const logos = [logo, logo1, logo2, logo3, logo4, logo5, logo6];
+---
+
+<div class="clients__container container">
+  <Title
+    name="Our Clients"
+    description="We have been working with some Fortune 500+ clients"
+  />
+  <!-- || Logos -->
+  <LogoContainer {logos} />
+</div>

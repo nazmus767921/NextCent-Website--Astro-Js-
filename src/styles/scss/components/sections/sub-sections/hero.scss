@@ -1,0 +1,41 @@
+@use "../../../sizes";
+@use "../../../sg";
+
+.hero__container {
+  display: grid;
+  grid-template-rows: 1fr;
+  place-items: center;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  min-height: 100svh;
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    gap: calc(sizes.$pm-5 - sizes.$pm-3);
+  }
+  .hero__content {
+    text-align: center;
+    order: 1;
+
+    p {
+      margin-block: sizes.$pm-base sizes.$pm-2;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .hero__container {
+    min-height: 40em;
+    .container {
+      grid-template-columns: clamp(1rem, 42em, 60%) 1fr;
+    }
+    .hero__content {
+      text-align: unset;
+
+      order: unset;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+menu#mobile-menu {
+  height: 130vh; //fallback for non-supported browsers
+  height: 130dvh; //fallback for non-supported browsers
+  height: 130svh;
+
+  display: none; // defalult  state is hidden, will be shown on click or when screen size < 768px
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+
+  background-color: white;
+
+  .negative-margin {
+    // Used to make links to be on the center of the screen. (mobile menu height is 100vh + 30vh). so, it needs to be substructed.
+    margin-top: -30vh;
+  }
+
+  #menu__close--button {
+    width: var(--hamMenuSize);
+    aspect-ratio: 1/1;
+
+    margin: 0.4em 1.6em;
+
+    display: flex;
+    flex-direction: row-reverse;
+
+    position: absolute;
+    top: 1.25em;
+    right: 0;
+  }
+
+  .menu__links {
+    margin-block: 0.5em;
+    padding-block: 1em;
+    padding-inline: 2em;
+    background-color: transparent;
+
+    font-size: 1.2em;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    text-align: center;
+    text-transform: capitalize;
+  }
+}
+
+menu#mobile-menu.show {
+  display: flex;
+}

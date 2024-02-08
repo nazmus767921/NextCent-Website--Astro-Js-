@@ -1,0 +1,34 @@
+---
+import { Image } from "astro:assets";
+// || Styles
+import "../styles/scss/components/contentsection.scss";
+// || Components
+import Button from "./Button.astro";
+import Title from "./Title.astro";
+
+export interface Props {
+  image: ImageMetadata;
+  title: string;
+  description: string;
+  button?: { name: string; url: string };
+}
+
+const {
+  image,
+  title,
+  description,
+  button = { name: "Button Name", url: "" },
+} = Astro.props;
+---
+
+<section class="section">
+  <div class="section__container container">
+    <div class="section__image">
+      <Image src={image} width={image.width} height={image.height} alt={""} />
+    </div>
+    <div class="section__content">
+      <Title name={title} {description} />
+      <Button url={button.url} primary large>{button.name}</Button>
+    </div>
+  </div>
+</section>

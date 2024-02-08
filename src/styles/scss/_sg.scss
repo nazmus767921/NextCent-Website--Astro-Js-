@@ -1,0 +1,35 @@
+// || TypoGraphy
+$ff-base: Inter, Arial, Helvetica, sans-serif;
+
+// || Colors
+$color-primary: #4caf4f;
+$color-primary-1: #43a046;
+$color-primary-2: #388e3b;
+$color-primary-3: #237d31;
+$color-primary-4: #1b5e1f;
+$color-primary-5: #103e13;
+$color-secondary: #263238;
+$color-info: #2194f3;
+$color-action-warning: #fbc02d;
+$color-action-error: #e53835;
+$color-action-success: #2e7d31;
+$color-neutral-silver: #f5f7fa;
+$color-neutral-grey: #717171;
+$color-neutral-grey-dark: #4d4d4d;
+$color-neutral-black: #263238;
+$color-white-20: #ffffff1b;
+$color-pure-white: #fff;
+
+// || Border radius
+$rounded-1: 6px;
+
+// || shadows
+/* Effect styles */
+$shadow-sm: 0px 2px 4px rgba(171, 190, 209, 0.2);
+$shadow-md: 0px 4px 8px rgba(171, 190, 209, 0.4);
+$shadow-lg: 0px 6px 12px rgba(171, 190, 209, 0.3);
+$shadow-xl: 0px 8px 16px rgba(171, 190, 209, 0.4);
+$shadow-2xl: 0px 16px 32px rgba(171, 190, 209, 0.3);
+
+// || Animation Easing
+$ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);

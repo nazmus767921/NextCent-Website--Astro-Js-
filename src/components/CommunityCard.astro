@@ -1,0 +1,27 @@
+---
+import { Image } from "astro:assets";
+// || styles
+import "../styles/scss/components/communitycard.scss";
+// || Components
+import TextButton from "./TextButton.astro";
+
+const {
+  content: { title, url },
+} = Astro.props;
+---
+
+<div class="community-card">
+  <div class="image imgWrapper">
+    <Image
+      src={"/images/workingOnLaptop.jpg"}
+      width={386}
+      height={286}
+      alt=""
+    />
+  </div>
+  <div class="content">
+    <div class="title">{title}</div>
+    <div class="flexible"></div>
+    <TextButton classes="is--color-brand" >Read more</TextButton>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+@use "../sizes";
+@use "../sg";
+
+.button {
+  padding: 10px 20px;
+  font-size: var(--fs-sm);
+  font-weight: 400;
+
+  border: none;
+  border-radius: sg.$rounded-1;
+
+  transition: all 0.35s sg.$ease-out-expo;
+
+  &.primary {
+    background-color: sg.$color-primary;
+    color: sg.$color-neutral-silver;
+  }
+  &.secondary {
+    background-color: transparent;
+    color: sg.$color-primary;
+  }
+  &.large {
+    padding: 14px 32px;
+  }
+
+  &:hover {
+    &.primary {
+      background-color: sg.$color-primary-1;
+    }
+    &.secondary {
+      color: sg.$color-primary-3;
+    }
+  }
+}

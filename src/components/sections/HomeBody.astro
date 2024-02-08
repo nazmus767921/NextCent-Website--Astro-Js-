@@ -1,0 +1,20 @@
+---
+// || Styles
+import "../../styles/scss/components/sections/homebody.scss";
+// || components
+import CommunityUpdates from "./CommunityUpdates.astro";
+import Cta from "./Cta.astro";
+import Acheivements from "./sub-sections/Acheivements.astro";
+import Calendar from "./sub-sections/Calendar.astro";
+import Customers from "./sub-sections/Customers.astro";
+import Unlock from "./sub-sections/Unlock.astro";
+---
+
+<div class="homebody">
+  <Unlock />
+  <Acheivements />
+  <Calendar />
+  <Customers />
+  <CommunityUpdates />
+  <Cta />
+</div>

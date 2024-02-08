@@ -1,0 +1,23 @@
+---
+// || imports
+import "../styles/scss/components/button.scss";
+export interface Props {
+  primary?: boolean;
+  secondary?: boolean;
+  large?: boolean;
+  url?: string;
+}
+const { primary, secondary, url, large } = Astro.props;
+---
+
+<a href={url}>
+  <button
+    type="button"
+    class:list={[
+      "button",
+      { primary: primary, secondary: secondary, large: large },
+    ]}
+  >
+    <slot />
+  </button>
+</a>

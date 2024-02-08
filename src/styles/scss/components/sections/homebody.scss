@@ -1,0 +1,10 @@
+@use "../../sizes";
+
+.homebody {
+  $gap: sizes.$pm-4;
+  padding-block-start: $gap;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  row-gap: $gap;
+}

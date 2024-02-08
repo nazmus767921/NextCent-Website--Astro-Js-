@@ -1,0 +1,34 @@
+---
+// || Styles
+import "../../styles/scss/components/sections/communityupdates.scss";
+// || Components
+import CommunityCard from "../CommunityCard.astro";
+import Title from "../Title.astro";
+---
+
+<section class="community-updates">
+  <div class="container">
+    <Title
+      name="Caring is the new marketing"
+      description="The Nexcent blog is the best place to read about the latest membership insights, trends and more. See who's joining the community, read about how our community are increasing their membership income and lot's more.​"
+    />
+    <div class="cards">
+      <CommunityCard
+        content={{
+          title: "Creating Streamlined Safeguarding Processes with OneRen",
+        }}
+      />
+      <CommunityCard
+        content={{
+          title:
+            "What are your safeguarding responsibilities and how can you manage them?",
+        }}
+      />
+      <CommunityCard
+        content={{
+          title: "Revamping the Membership Model with Triathlon Australia",
+        }}
+      />
+    </div>
+  </div>
+</section>

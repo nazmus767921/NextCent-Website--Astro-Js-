@@ -1,0 +1,15 @@
+@use "../../../sizes";
+
+.clients__container {
+  display: flex;
+  flex-direction: column;
+  gap: sizes.$pm-base;
+  margin-inline: auto;
+  margin-top: sizes.$pm-3;
+  align-items: center;
+
+  h2,
+  p {
+    text-align: center;
+  }
+}

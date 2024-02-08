@@ -1,0 +1,36 @@
+---
+import "../../../styles/scss/components/sections/sub-sections/community.scss";
+import Cards from "../../Cards.astro";
+// ||logos import
+import {
+  clubs,
+  membership,
+  nationalAssociations,
+} from "../../../assets/icons/icons";
+// || Components
+import Title from "../../Title.astro";
+---
+
+<div class="community__container container">
+  <Title
+    name="Manage your entire community in a single system"
+    description="Who is Nextcent suitable for?"
+  />
+  <div class="cards__container">
+    <Cards
+      icon={membership}
+      title="Membership Organisations"
+      description="Our membership management software provides full automation of membership renewals and payments"
+    />
+    <Cards
+      icon={nationalAssociations}
+      title="National Associations"
+      description="Our membership management software provides full automation of membership renewals and payments"
+    />
+    <Cards
+      icon={clubs}
+      title="Clubs And Groups"
+      description="Our membership management software provides full automation of membership renewals and payments"
+    />
+  </div>
+</div>

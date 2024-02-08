@@ -1,0 +1,70 @@
+---
+// || styles
+import "../../../styles/scss/components/sections/sub-sections/acheivements.scss";
+// || Icons
+import { Image } from "astro:assets";
+import {
+  clubsHands,
+  events,
+  members,
+  payment,
+} from "../../../assets/icons/icons";
+
+const trophies = [
+  {
+    count: 2_245_341,
+    title: "Members",
+    icon: members,
+  },
+  {
+    count: 46_328,
+    title: "Clubs",
+    icon: clubsHands,
+  },
+  {
+    count: 46_328,
+    title: "Event Bookings",
+    icon: events,
+  },
+  {
+    count: 1_926_436,
+    title: "Payments",
+    icon: payment,
+  },
+];
+---
+
+<div class="acheivements is--background-colored">
+  <div class="container">
+    <div class="acheivements__heading">
+      <h2>
+        Helping a local <br />
+        <span class="is--color-brand">business reinvent itself</span>
+      </h2>
+      <p>We reached here with our hard work and dedication</p>
+    </div>
+    <!-- Trophy grid -->
+    <div class="acheivements__trophies">
+      {
+        trophies.map((trophy) => {
+          return (
+            <div class="trophy">
+              <div class="trophy__icon imgWrapper">
+                <Image
+                  src={trophy.icon}
+                  width={trophy.icon.width}
+                  height={trophy.icon.height}
+                  alt={""}
+                />
+              </div>
+              <div class="trophy__title">
+                <h3>{trophy.count}</h3>
+                <p>{trophy.title}</p>
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+</div>

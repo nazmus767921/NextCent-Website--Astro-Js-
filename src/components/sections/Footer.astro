@@ -1,0 +1,135 @@
+---
+import { Image } from "astro:assets";
+// || Styles
+import "../../styles/scss/components/sections/footer.scss";
+// || icons && images
+import {
+  dribbble,
+  instagram,
+  send,
+  twitter,
+  youtube,
+} from "../../assets/icons/icons";
+import logo from "../../assets/logo/brand-dark.svg";
+// || Components
+
+const logos = [
+  {
+    icon: dribbble,
+    url: "#",
+  },
+  {
+    icon: instagram,
+    url: "#",
+  },
+  {
+    icon: twitter,
+    url: "#",
+  },
+  {
+    icon: youtube,
+    url: "#",
+  },
+];
+
+const totalGridsNeeded = logos.length <= 6 ? logos.length : 6;
+---
+
+<footer class="footer">
+  <div class="container">
+    <!-- || Left Side -->
+    <div class="company-info">
+      <div class="company-logo imgWrapper">
+        <Image src={logo} width={logo.width} height={logo.height} alt="" />
+      </div>
+      <span class="footer__copyright">
+        <p>Copyright © 2020 Nexcent ltd.</p>
+        <p>All rights reserved</p>
+      </span>
+      <div class="social-links">
+        <div class="logo-container">
+          {
+            logos.map((logo) => {
+              return (
+                <a href={logo.url} class="logo">
+                  <div class="logo-bg" />
+                  <Image
+                    src={logo.icon}
+                    width={logo.icon.width}
+                    height={logo.icon.height}
+                    alt=""
+                  />
+                </a>
+              );
+            })
+          }
+        </div>
+      </div>
+    </div>
+    <!-- || Right Side -->
+    <div class="footer-links">
+      <span class="links--span">
+        <div class="labeled-list">
+          <h4>Company</h4>
+          <!-- Links -->
+          <ul>
+            <a href="#">
+              <li>About Us</li>
+            </a>
+            <a href="#">
+              <li>Blog</li>
+            </a>
+            <a href="#">
+              <li>Contact us</li>
+            </a>
+            <a href="#">
+              <li>Pricing</li>
+            </a>
+            <a href="#">
+              <li>Testimonials</li>
+            </a>
+          </ul>
+        </div>
+        <div class="labeled-list">
+          <h4>Support</h4>
+          <!-- Links -->
+          <ul>
+            <a href="#">
+              <li>Help center</li>
+            </a>
+            <a href="#">
+              <li>Terms of service</li>
+            </a>
+            <a href="#">
+              <li>Legal</li>
+            </a>
+            <a href="#">
+              <li>Privacy policy</li>
+            </a>
+            <a href="#">
+              <li>Status</li>
+            </a>
+          </ul>
+        </div>
+      </span>
+
+      <!-- Email -->
+      <div class="labeled-list">
+        <h4>Stay up to date</h4>
+        <div class="input">
+          <button class="input-icon imgWrapper">
+            <Image src={send} width={send.width} height={send.height} alt="" />
+          </button>
+          <input
+            type="email"
+            name="newsletter-email"
+            id="newsletter-email"
+            placeholder="Your email address"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style define:vars={{ totalGridsNeeded }}></style>

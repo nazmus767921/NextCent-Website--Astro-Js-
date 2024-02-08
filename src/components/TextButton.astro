@@ -1,0 +1,27 @@
+---
+import { Image } from "astro:assets";
+// || styles
+import "../styles/scss/components/textbutton.scss";
+// || icons
+import { right } from "../assets/icons/icons";
+
+export interface Props {
+  classes?: string;
+  color?: `#${string}`;
+}
+
+const { color, classes } = Astro.props;
+---
+
+<button
+  type="button"
+  class:list={["text__button", classes]}
+  style={{ color: color || "" }}
+>
+  <h4>
+    <slot />
+  </h4>
+  <span class="text__button__icon">
+    <Image src={right} width={right.width} height={right.height} alt="" />
+  </span>
+</button>

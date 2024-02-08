@@ -1,0 +1,32 @@
+@use "../sizes";
+
+.section {
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: sizes.$pm-3;
+    a {
+      display: flex;
+      width: fit-content;
+      margin-inline: auto;
+    }
+  }
+  &__content {
+    // width: 95%;
+    p {
+      margin-block: sizes.$pm-base sizes.$pm-2;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .section {
+    &__container {
+      grid-template-columns: 1fr clamp(370px, 55%, 660px);
+      a {
+        margin-inline: unset;
+      }
+    }
+  }
+}

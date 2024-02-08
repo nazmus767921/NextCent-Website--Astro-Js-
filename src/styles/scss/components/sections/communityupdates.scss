@@ -1,0 +1,35 @@
+@use "../../sizes";
+
+section.community-updates {
+  .container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: sizes.$pm-4;
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: sizes.$pm-1;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  section.community-updates {
+    .container {
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+}
+@media screen and (min-width: 1024px) {
+  section.community-updates {
+    .container {
+      .cards {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+}

@@ -1,0 +1,82 @@
+---
+import { Image } from "astro:assets";
+import logo from "../assets/logo/brand-light.svg";
+import "../styles/scss/nav.scss";
+// || Component import
+import Button from "./Button.astro";
+import MobileMenu from "./MobileMenu.astro";
+import { menu } from "../assets/icons/icons";
+
+const navLinks = [
+  {
+    name: "home",
+    url: "/",
+  },
+  {
+    name: "Service",
+    url: "#",
+  },
+  {
+    name: "Feature",
+    url: "#",
+  },
+  {
+    name: "Product",
+    url: "#",
+  },
+  {
+    name: "Testimonial",
+    url: "#",
+  },
+  {
+    name: "FAQ",
+    url: "#",
+  },
+];
+---
+
+<nav class="nav is--background-colored">
+  <div class="container">
+    <div class="logo">
+      <Image
+        src={logo}
+        width={logo.width}
+        height={logo.height}
+        alt={"logo"}
+        quality={100}
+      />
+    </div>
+    <!-- || Desktop Menu -->
+    <div class="menu--desktop">
+      <div class="nav__menu_container">
+        {
+          navLinks.map((link) => (
+            <a href={link.url} class="menu">
+              {link.name}
+            </a>
+          ))
+        }
+      </div>
+      <!-- Login -->
+      <div class="nav__action__container">
+        <Button secondary>Login</Button>
+        <Button primary>Sign up</Button>
+      </div>
+    </div>
+    <!-- || Desktop Menu -->
+
+    <!-- || Mobile Menu -->
+    <div class="menu--mobile">
+      <button type="button" id="hamburger" class="persist">
+        <Image 
+          src={menu}
+          width={menu.width}
+          width={menu.height}
+          alt=""
+        />
+      </button>
+      <MobileMenu />
+    </div>
+    <!-- || Mobile Menu -->
+  </div>
+</nav>

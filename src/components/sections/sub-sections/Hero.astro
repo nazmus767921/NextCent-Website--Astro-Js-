@@ -1,0 +1,33 @@
+---
+import { Image } from "astro:assets";
+// || styles
+import "../../../styles/scss/components/sections/sub-sections/hero.scss";
+// || components
+import Button from "../../Button.astro";
+// || Images
+import heroImage from "../../../assets/Illustrations/hero-illustration.svg";
+---
+
+<div class="hero__container is--background-colored">
+  <div class="container">
+    <div class="hero__content is--left">
+      <h1>
+        Lessons and insights <br class="is--visible-from-mobile" /><span
+          class="is--color-brand">from 8 years</span
+        >
+      </h1>
+      <p>
+        Where to grow your business as a photographer: site or social media?
+      </p>
+      <Button primary large>Register</Button>
+    </div>
+    <div class="hero__image is--visible-from-tablet">
+      <Image
+        src={heroImage}
+        width={heroImage.width}
+        height={heroImage.height}
+        alt="hero image"
+      />
+    </div>
+  </div>
+</div>

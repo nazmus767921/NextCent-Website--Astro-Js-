@@ -1,0 +1,10 @@
+---
+import "../styles/scss/components/title.scss";
+
+const { name, description } = Astro.props;
+---
+
+<div class="title__container">
+  <h2>{name}</h2>
+  <p>{description}</p>
+</div>

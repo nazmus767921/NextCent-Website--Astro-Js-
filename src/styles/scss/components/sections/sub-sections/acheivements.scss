@@ -1,0 +1,66 @@
+@use "../../../sizes";
+
+.acheivements {
+  padding-block: calc(sizes.$pm-4 + 1em);
+  .container {
+    display: grid;
+    grid-auto-flow: row;
+    // align-items: center;
+    place-items: center;
+    text-align: center;
+
+    row-gap: sizes.$pm-4;
+  }
+  &__heading {
+    max-width: 100%;
+    p {
+      margin-top: sizes.$pm-sm;
+    }
+  }
+  &__trophies {
+    $gap: sizes.$pm-2;
+    font-size: 0.9em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $gap calc($gap + 0.5em);
+    .trophy {
+      display: grid;
+      grid-template-columns: 2em 1fr;
+      align-items: center;
+      justify-content: center;
+
+      gap: sizes.$pm-base;
+      .trophy__icon {
+        width: clamp(1rem, 100%, 2em);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .acheivements {
+    &__trophies {
+      font-size: 1.1em;
+    }
+  }
+}
+@media screen and (min-width: 991px) {
+  .acheivements {
+    &__heading {
+      max-width: 100%;
+    }
+    .container {
+      grid-template-columns: clamp(370px, 100%, 540px) 1fr;
+      grid-auto-flow: unset;
+      text-align: unset;
+    }
+
+    &__trophies {
+      font-size: unset;
+
+      .trophy {
+        justify-content: unset;
+      }
+    }
+  }
+}

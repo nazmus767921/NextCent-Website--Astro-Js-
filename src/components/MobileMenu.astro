@@ -1,0 +1,64 @@
+---
+// || Styles
+import { Image } from "astro:assets";
+import { x } from "../assets/icons/icons";
+import "../styles/scss/components/mobilemenu.scss";
+
+// || Varibales
+const navLinks = [
+  {
+    name: "home",
+    url: "/",
+  },
+  {
+    name: "Service",
+    url: "#",
+  },
+  {
+    name: "Feature",
+    url: "#",
+  },
+  {
+    name: "Product",
+    url: "#",
+  },
+  {
+    name: "Testimonial",
+    url: "#",
+  },
+  {
+    name: "FAQ",
+    url: "#",
+  },
+];
+---
+
+<menu id="mobile-menu">
+  <div id="menu__close--button">
+    <Image src={x} width={x.width} width={x.height} alt="" />
+  </div>
+  <div class="negative-margin">
+    {
+      navLinks.map((i) => (
+        <a href={i.url}>
+          <li class="menu__links">{i.name}</li>
+        </a>
+      ))
+    }
+  </div>
+</menu>
+
+<script>
+  const mobileMenu = document.getElementById("mobile-menu"),
+    hamburger = document.getElementById("hamburger"),
+    closeMenuButton = document.getElementById("menu__close--button");
+
+  hamburger.addEventListener("click", showMobileMenu);
+  closeMenuButton.addEventListener("click", hideMobileMenu);
+  function showMobileMenu() {
+    mobileMenu.classList.add("show");
+  }
+  function hideMobileMenu() {
+    mobileMenu.classList.remove("show");
+  }
+</script>

@@ -1,0 +1,29 @@
+@use "../../sizes";
+
+section.cta {
+  width: 100%;
+  padding-block: sizes.$pm-2;
+
+  .container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: sizes.$pm-2;
+
+    .title {
+      font-size: 3em;
+      width: clamp(1rem, 100%, 20ch);
+      margin-inline: auto;
+    }
+  }
+}
+
+@media screen and (min-width: 991px) {
+  section.cta {
+    .container {
+      .title {
+        font-size: var(--fs-h1);
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+@use "../../../sizes";
+
+.community__container {
+  display: flex;
+  flex-direction: column;
+  gap: sizes.$pm-base;
+
+  .title__container {
+    width: clamp(1rem, 80%, 540px);
+    margin: 0 auto;
+    text-align: center;
+  }
+  .cards__container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-self: center;
+    justify-content: space-between;
+    justify-items: center;
+    gap: sizes.$pm-4;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .community__container {
+    .cards__container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+@media screen and (min-width: 991px) {
+  .community__container {
+    .cards__container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

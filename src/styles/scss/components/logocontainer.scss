@@ -1,0 +1,16 @@
+@use "../sizes";
+
+.logo_container {
+  width: max(50%, min(100%));
+
+  display: grid;
+  grid-template-columns: repeat(var(--totalGridsNeeded), 1fr);
+  justify-items: center;
+
+  padding-block: sizes.$pm-2;
+
+  .logo {
+    width: 48px;
+    height: 48px;
+  }
+}
